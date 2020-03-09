@@ -1,7 +1,7 @@
 
 export default class SingletonBase  {
 
-  private static _instance: SingletonBase = null;
+  private static _instance: SingletonBase;
 
   constructor() {
     let extendedClass = (<any>this).__proto__.constructor;
@@ -14,7 +14,7 @@ export default class SingletonBase  {
   }
 
   public static instance(): any{
-    if (this._instance === null){
+    if (this._instance == null){
       this._instance = new this();
     }
 
